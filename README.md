@@ -6,7 +6,7 @@ An AI-powered Chrome extension that enhances your web browsing experience with i
 
 - **Smart Overlay**: Press `Ctrl + Alt + Space` to open a sleek overlay interface
 - **AI-Powered Features**:
-  - Summarize any webpage using Facebook BART
+  - Summarize any webpage using Cohere's Command R model
   - Ask questions about the content using DeepSeek-R1
   - Search within specific websites
   - Change webpage themes on the fly
@@ -17,14 +17,16 @@ An AI-powered Chrome extension that enhances your web browsing experience with i
   - Glass morphism UI
   - Inter font
   - Responsive layout
+  - Scrollable summary containers
+  - Smart UI that clears summaries when minimizing the overlay
 
 ## Installation
 
 1. Clone this repository
-2. Get your Huggingface API key from [huggingface.co](https://huggingface.co)
+2. Get your Cohere API key from [cohere.com](https://cohere.com)
 3. Create a `.env` file in the root directory and add your API key:
    ```
-   HUGGINGFACE_API_KEY=your_api_key_here
+   COHERE_API_KEY=your_api_key_here
    ```
 4. Open Chrome and go to `chrome://extensions/`
 5. Enable "Developer mode" in the top-right corner
@@ -44,9 +46,9 @@ An AI-powered Chrome extension that enhances your web browsing experience with i
 The extension uses the following technologies:
 - JavaScript (ES6+)
 - Chrome Extension APIs
-- Huggingface API
-  - Facebook BART for summarization
-  - DeepSeek-R1 for question answering
+- Cohere API
+  - Command R model for concise summarization (max 768 tokens)
+- DeepSeek-R1 for question answering
 
 ## License
 

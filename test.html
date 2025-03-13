@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercast Extension Test Page</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 16px;
+        }
+        .instructions {
+            background-color: #f5f5f5;
+            border-left: 4px solid #3182ce;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .keyboard-shortcut {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 0 2px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3182ce;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <h1>Supercast Extension Test Page</h1>
+    
+    <div class="instructions">
+        <p><strong>Testing Instructions:</strong></p>
+        <p>This page is designed to help you test the Supercast Chrome extension. Press the keyboard shortcut <span class="keyboard-shortcut">Alt</span> + <span class="keyboard-shortcut">Shift</span> + <span class="keyboard-shortcut">S</span> to toggle the overlay.</p>
+        <p>You can also click the button below to test the overlay manually:</p>
+        <button class="button" id="toggle-overlay">Toggle Overlay</button>
+    </div>
+    
+    <h2>Features to Test:</h2>
+    <ul>
+        <li><strong>Toggle Overlay:</strong> Use the keyboard shortcut or button to show/hide the overlay</li>
+        <li><strong>Minimal Mode:</strong> The overlay should initially show in minimal mode with just a command input and three buttons</li>
+        <li><strong>Maximize:</strong> Click the maximize button to expand the overlay and show additional content</li>
+        <li><strong>Pin Site:</strong> Test the pin button to add this test page to your pinned sites</li>
+        <li><strong>Reading List:</strong> Test adding this page to your reading list</li>
+    </ul>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+    
+    <p>Praesent euismod, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+    
+    <script>
+        // This is just for the test page button
+        document.getElementById('toggle-overlay').addEventListener('click', function() {
+            // We'll simulate the keyboard shortcut Alt+Shift+S
+            // This will work if the content script is properly injected
+            const toggleEvent = new CustomEvent('supercast-toggle-overlay');
+            document.dispatchEvent(toggleEvent);
+        });
+    </script>
+</body>
+</html>
